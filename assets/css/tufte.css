@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* Tufte CSS styles */
+
+
+body {
+counter-reset: sidenote-counter;
+}
+
+
+.numeral {
+    font-family:'Chaumont';
+}
+
+
+
+/* Sidenotes, margin notes, figures, captions */
+.sidenote,
+.marginnote {
+    float: right;
+    clear: right;
+    margin-right: calc(-50vw + var(--width-side-text) / 2 - var(--margin) * 2);
+    /* width: var(--width-side-text); */
+    width: calc(var(--width-side-text) - var(--margin) * 4);
+    margin-bottom: 0;
+    font-size: var(--font-size-XS);
+    line-height: var(--line-height-M);
+    /* padding-bottom: var(--line-height-M); */
+    padding-bottom: calc(var(--line-height-M)* 4);
+    vertical-align: baseline;
+    position: relative;
+    margin-top: 0.3rem;
+    word-spacing: 0em;
+}
+
+
+.sidenote-number {
+    counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+    font-family: 'CenturySchL';
+    position: relative;
+    vertical-align: baseline;
+    background-color: #c9cfda;
+    /* border: 1px black solid; */
+    width: 25px;
+}
+
+.sidenote-number:after {
+    content: counter(sidenote-counter);
+    font-size: var(--font-size-XS);
+    top: -0.3rem;
+    left: -0.2rem;
+}
+
+.sidenote:before {
+    position: absolute;
+    left: -25px;
+    z-index: 5;    
+    content: counter(sidenote-counter) " ";
+    font-size: var(--font-size-S);
+    right:calc(var(--width-indent) + 0rem);
+}
+
+.sidenote:after{
+    right:20px;
+}
+
+
+figure img{
+    counter-increment: sidenote-counter;
+}
+
+
+
+figure img:before {
+    content: counter(sidenote-counter);
+    font-size: var(--font-size-XS);
+    top: -0.3rem;
+    left: -0.2rem;
+}
+
+
+figure :before{
+    right:20px;
+}
+
+
+span.sidenote {
+    top:-0.3rem;
+    /* text-indent: var(--width-indent); */
+}
+
+.sidenote-mobile{
+    display:none;
+}
+
+@media (max-width: 880px) {
+
+  .sidenote
+ {
+  display:none;
+}
+
+.sidenote-mobile{
+    display:block;
+    font-size: var(--font-size-XS);
+    line-height: var(--line-height-M);
+    padding-bottom: var(--line-height-M);
+    vertical-align: baseline;
+}
+
+.sidenote-mobile{
+    width:calc(100vw - var(--width-side-text))
+}
+
+.sidenote-mobile sup{
+    font-size: var(--font-size-S);
+    top: 0rem;
+    left: 0rem;
+    margin-right:2em;
+}
+
+}

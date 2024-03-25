@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'Timezone';
+	src: url('../fonts/HALTimezoneTest-Regular.otf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Timezone';
+	src: url('../fonts/HALTimezoneTest-Italic.otf');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Ogg';
+	src: url('../fonts/Ogg-MediumItalic.otf');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Ogg';
+	src: url('../fonts/Ogg-Medium.otf');
+	font-style: normal;
+}
